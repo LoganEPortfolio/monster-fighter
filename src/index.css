@@ -1,4 +1,4 @@
-/* Global styles */
+/* Global Styles */
 body {
   margin: 0;
   padding: 0;
@@ -8,59 +8,58 @@ body {
   text-align: center;
 }
 
-nav .container{
-  justify-content: center !important;
-
-}
-
-.navbar-header {
-  font-family: 'Creepster', cursive;
-  
+/* Navigation */
+nav .container {
+  display: flex;
+  justify-content: center;
 }
 
 .navbar-header p {
   font-size: 4rem;
   color: white;
 }
-/* Fighter selection container */
+
+/* Fighter Selection */
 .fight-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin: 2rem 0;
 }
 
 .player-select {
-  margin-bottom: 2rem;
+  font-size: 1.5rem;
 }
 
-.player-select select,
 .player-select .btn {
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
 }
 
-/* Main fight area */
+/* Main Fight Box */
 .fight-box {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Container for Fighter Cards */
+.fighterCards {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   gap: 2rem;
-  margin: 2rem;
   flex-wrap: wrap;
 }
 
-/* Fighter cards */
+/* Fighter Cards */
 .mainContent {
   background: #222;
-  border-radius: 8px;
   padding: 1rem;
+  border-radius: 8px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 250px;
-  max-width: 300px;
-  box-sizing: border-box;
 }
 
 .mainContent h1 {
@@ -73,7 +72,7 @@ nav .container{
   margin: 0.5rem 0;
 }
 
-/* Name and photo area */
+/* Name and Photo */
 .namePhoto {
   display: flex;
   flex-direction: column;
@@ -88,27 +87,13 @@ nav .container{
   border-radius: 8px;
 }
 
-/* VS text between fighter cards */
-.fight-box > h2 {
-  font-size: 3rem;
-  margin: 0 1rem;
-}
-
-/* Action buttons */
-.actionButtons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+/* VS Text */
+.vs {
+  font-size: 5rem;
   margin: 2rem 0;
 }
 
-.actionButtons .btn {
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-  min-width: 120px;
-}
-
-/* Battle log */
+/* Battle Log */
 .battle-log {
   margin: 2rem auto;
   max-width: 600px;
@@ -129,42 +114,52 @@ nav .container{
   margin: 0;
 }
 
-/* Responsive adjustments for mobile devices */
+/* Action Buttons (Desktop) */
+.actionButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+/* Mobile Adjustments */
 @media (max-width: 768px) {
-  .fight-box {
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 80px; /* Space for the action buttons */
+  /* Arrange fighter cards side by side */
+  .fighterCards {
+    flex-direction: row;
+    justify-content: space-around;
   }
-  
-  /* Hide VS text on mobile to save vertical space */
-  .fight-box > h2 {
+  .mainContent {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+  /* Hide VS text on mobile to save space */
+  .vs {
     display: none;
   }
-  
-  .mainContent h1,
-  .mainContent p {
-    font-size: 1.5rem;
-  }
-
-   /* Fix the action buttons at the bottom */
-   .actionButtons {
+  /* Fix the action buttons at the bottom */
+  .actionButtons {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.9); /* Slight transparent background for readability */
-    padding: 0.5rem 0;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 0.5rem;
     z-index: 1000;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
   }
-  
-  
+  /* Add bottom margin to fight-box so content isn’t hidden */
+  .fight-box {
+    margin-bottom: 80px;
+  }
+  /* Adjust font sizes in fighter cards if needed */
+  .mainContent h1,
+  .mainContent p {
+    font-size: 1.5rem;
+  }
+  /* Adjust button sizes */
   .actionButtons .btn {
     font-size: 1rem;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     min-width: 100px;
   }
 }
