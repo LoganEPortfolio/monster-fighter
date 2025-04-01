@@ -7,7 +7,7 @@ import './Fight.css';
 // const enemies = ['Blockman', 'Butterfly', 'Bugz', 'Flowerz', 'Multihead', 'Squidman']
 
 const fighterImages = {
-    Blockman: process.env.PUBLIC_URL + '/images/blockman.png',
+    Blockman: process.env.PUBLIC_URL + '/images/blockMan.png',
     Bugz: process.env.PUBLIC_URL + '/images/bugz.png',
     Flowerz: process.env.PUBLIC_URL + '/images/flower.png',
     Butterfly: process.env.PUBLIC_URL + '/images/butterfly.png',
