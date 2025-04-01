@@ -1,0 +1,85 @@
+nav .container{
+  justify-content: center !important;
+
+}
+
+.navbar-header {
+  font-family: 'Creepster', cursive;
+  
+}
+
+.navbar-header p {
+  font-size: 4rem;
+  color: white;
+}
+
+body {
+  text-align: center; 
+  font-family: 'Creepster', cursive;
+  color: white;
+  background-color: black;
+}
+
+.fight-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-select{
+  font-size: 1.5rem;
+}
+
+.player-select .btn {
+  font-size: 1.5rem;
+}
+
+
+.mainContent {
+  display: flex;
+  justify-content: center;
+}
+
+.mainContent h1 {
+  width: 200px;
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+
+
+.mainContent p {
+  align-self: center; 
+  font-size: 5rem;
+  margin-left: 1rem;
+  width: 100px;
+}
+
+.playerContent {
+  margin-top: 3rem;
+}
+
+.enemyContent {
+  margin-bottom: 3rem;
+}
+.namePhoto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 700px;
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: horizontal;
+  justify-content: center;
+}
+
+.actionButtons .btn {
+  margin: 10px;
+  width: 200px;
+  font-size: 1.5rem;
+}
+
