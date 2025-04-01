@@ -8,17 +8,20 @@ body {
   text-align: center;
 }
 
-/* Navigation */
-nav .container {
-  display: flex;
-  justify-content: center;
+nav .container{
+  justify-content: center !important;
+
+}
+
+.navbar-header {
+  font-family: 'Creepster', cursive;
+  
 }
 
 .navbar-header p {
-  font-size: 3rem;
-  margin: 0.5rem 0;
+  font-size: 4rem;
+  color: white;
 }
-
 /* Fighter selection container */
 .fight-container {
   display: flex;
@@ -131,6 +134,7 @@ nav .container {
   .fight-box {
     flex-direction: column;
     gap: 1rem;
+    margin-bottom: 80px; /* Space for the action buttons */
   }
   
   /* Hide VS text on mobile to save vertical space */
@@ -142,6 +146,21 @@ nav .container {
   .mainContent p {
     font-size: 1.5rem;
   }
+
+   /* Fix the action buttons at the bottom */
+   .actionButtons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9); /* Slight transparent background for readability */
+    padding: 0.5rem 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
   
   .actionButtons .btn {
     font-size: 1rem;
