@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/monster-fighter/static/css/main.f0a2f403.css",
-    "main.js": "/monster-fighter/static/js/main.7cc7f12b.js",
+    "main.js": "/monster-fighter/static/js/main.52246c14.js",
     "static/js/787.a5983953.chunk.js": "/monster-fighter/static/js/787.a5983953.chunk.js",
     "index.html": "/monster-fighter/index.html",
     "main.f0a2f403.css.map": "/monster-fighter/static/css/main.f0a2f403.css.map",
-    "main.7cc7f12b.js.map": "/monster-fighter/static/js/main.7cc7f12b.js.map",
+    "main.52246c14.js.map": "/monster-fighter/static/js/main.52246c14.js.map",
     "787.a5983953.chunk.js.map": "/monster-fighter/static/js/787.a5983953.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f0a2f403.css",
-    "static/js/main.7cc7f12b.js"
+    "static/js/main.52246c14.js"
   ]
 }
