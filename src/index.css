@@ -1,144 +1,151 @@
-nav .container{
-  justify-content: center !important;
-
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Creepster', cursive;
+  background-color: black;
+  color: white;
+  text-align: center;
 }
 
-.navbar-header {
-  font-family: 'Creepster', cursive;
-  
+/* Navigation */
+nav .container {
+  display: flex;
+  justify-content: center;
 }
 
 .navbar-header p {
-  font-size: 4rem;
-  color: white;
+  font-size: 3rem;
+  margin: 0.5rem 0;
 }
 
-body {
-  text-align: center; 
-  font-family: 'Creepster', cursive;
-  color: white;
-  background-color: black;
-}
-
+/* Fighter selection container */
 .fight-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.player-select {
+  margin-bottom: 2rem;
+}
+
+.player-select select,
+.player-select .btn {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+}
+
+/* Main fight area */
+.fight-box {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
+  margin: 2rem;
+  flex-wrap: wrap;
 }
 
-.player-select{
-  font-size: 1.5rem;
-}
-
-.player-select .btn {
-  font-size: 1.5rem;
-}
-
-
+/* Fighter cards */
 .mainContent {
+  background: #222;
+  border-radius: 8px;
+  padding: 1rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-width: 250px;
+  max-width: 300px;
+  box-sizing: border-box;
 }
 
 .mainContent h1 {
-  width: 200px;
+  font-size: 2rem;
+  margin: 0.5rem 0;
 }
-
-h2 {
-  font-size: 5rem;
-}
-
-
 
 .mainContent p {
-  align-self: center; 
-  font-size: 5rem;
-  margin-left: 1rem;
-  width: 100px;
+  font-size: 2rem;
+  margin: 0.5rem 0;
 }
 
-.playerContent {
-  margin-top: 3rem;
-}
-
-.enemyContent {
-  margin-bottom: 3rem;
-}
+/* Name and photo area */
 .namePhoto {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  width: 700px;
+  gap: 1rem;
 }
 
+.namePhoto img {
+  max-width: 200px;
+  width: 100%;
+  border: 2px solid #444;
+  border-radius: 8px;
+}
+
+/* VS text between fighter cards */
+.fight-box > h2 {
+  font-size: 3rem;
+  margin: 0 1rem;
+}
+
+/* Action buttons */
 .actionButtons {
   display: flex;
-  flex-direction: horizontal;
   justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
 }
 
 .actionButtons .btn {
-  margin: 10px;
-  width: 200px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  min-width: 120px;
 }
 
-/* Responsive adjustments for mobile devices with side-by-side fighter images */
+/* Battle log */
+.battle-log {
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: left;
+  background: #222;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.battle-log h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.battle-log ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Responsive adjustments for mobile devices */
 @media (max-width: 768px) {
-  /* Arrange the two fighter containers side by side */
   .fight-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  /* Each fighter container takes about half the width */
-  .mainContent {
-    width: 45%;
-    margin: 1%;
-    text-align: center;
-  }
-  
-  /* Keep the content inside each fighter container centered */
-  .namePhoto {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
+    gap: 1rem;
   }
   
-  /* Scale down images so they fit side by side */
-  .namePhoto img {
-    width: 100%;
-    max-width: 120px;
-    height: auto;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Hide the VS. heading to reduce height */
-  h2 {
+  /* Hide VS text on mobile to save vertical space */
+  .fight-box > h2 {
     display: none;
   }
   
-  /* Adjust fighter name and HP sizes */
-  .mainContent h1 {
-    font-size: 2rem;
-  }
-  
+  .mainContent h1,
   .mainContent p {
-    font-size: 2rem;
-  }
-  
-  /* Adjust button sizes */
-  .actionButtons .btn {
-    width: 120px;
-    font-size: 1rem;
-  }
-  
-  /* Scale down the battle log heading */
-  .battle-log h3 {
     font-size: 1.5rem;
+  }
+  
+  .actionButtons .btn {
+    font-size: 1rem;
+    padding: 0.5rem;
+    min-width: 100px;
   }
 }
