@@ -11,7 +11,7 @@ const fighterImages = {
     Bugz: process.env.PUBLIC_URL + '/images/bugz.png',
     Flowerz: process.env.PUBLIC_URL + '/images/flower.png',
     Butterfly: process.env.PUBLIC_URL + '/images/butterfly.png',
-    Multihead: process.env.PUBLIC_URL + '/images/multihead.png',
+    Multihead: process.env.PUBLIC_URL + '/images/multiHead.png',
     Squidman: process.env.PUBLIC_URL + '/images/squidMan.png',
 }
 
