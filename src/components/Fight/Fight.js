@@ -31,6 +31,8 @@ const Fight = (props) => {
     const [isPlayerShaking, setIsPlayerShaking] = useState(false);
     const [battleLog, setBattleLog] = useState([]);
     const [gameOver, setGameOver] = useState(false);
+    const [enemyHPFlashClass, setEnemyHPFlashClass] = useState('');
+    const [playerHPFlashClass, setPlayerHPFlashClass] = useState('');
 
     const getRandomItem = (arr) => {
         const randomIndex = Math.floor(Math.random() * arr.length);
@@ -61,6 +63,11 @@ const Fight = (props) => {
         addBattleLog(playerAttackResult.message);
         setIsEnemyShaking(true);
         setTimeout(() => setIsEnemyShaking(false), 500);
+
+        // Trigger HP flash red for enemy HP text
+        setEnemyHPFlashClass('flash-red');
+        setTimeout(() => setEnemyHPFlashClass(''), 500);
+
         setTarget(cloneFighter(target));
         if (playerAttackResult.knockedOut) {
             addBattleLog(`${target.name} is knocked out! You win!`);
@@ -72,6 +79,11 @@ const Fight = (props) => {
             addBattleLog(enemyAttackResult.message);
             setIsPlayerShaking(true);
             setTimeout(() => setIsPlayerShaking(false), 500);
+
+            // Trigger HP flash red for player HP text
+            setPlayerHPFlashClass('flash-red');
+            setTimeout(() => setPlayerHPFlashClass(''), 500);
+
             setCharacter(cloneFighter(character));
             if (enemyAttackResult.knockedOut) {
                 addBattleLog(`${character.name} is knocked out! You lose!`);
@@ -84,6 +96,11 @@ const Fight = (props) => {
         if (gameOver) return;
         const healMessage = character.heal();
         addBattleLog(healMessage);
+
+        // Trigger HP flash green for player HP text when healed
+        setPlayerHPFlashClass('flash-green');
+        setTimeout(() => setPlayerHPFlashClass(''), 500);
+        
         setCharacter(cloneFighter(character));
     };
 
@@ -121,7 +138,7 @@ const Fight = (props) => {
                                 />
                             )}
                         </div>
-                        <p className={isPlayerShaking ? 'red' : ''}>{character.HP}</p>
+                        <p className={playerHPFlashClass}>{character.HP}</p>
                     </div>
                     <div className="mainContent enemyContent">
                         <div className="namePhoto">
@@ -135,7 +152,7 @@ const Fight = (props) => {
                                 />
                             )}
                         </div>
-                        <p className={isEnemyShaking ? 'red' : ''}>{target.HP}</p>
+                        <p className={enemyHPFlashClass}>{target.HP}</p>
                     </div>
                 </div>
                 <h2 className="vs">VS.</h2>
