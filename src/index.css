@@ -83,64 +83,62 @@ h2 {
   font-size: 1.5rem;
 }
 
-/* index.css - Responsive adjustments for mobile devices */
+/* Responsive adjustments for mobile devices with side-by-side fighter images */
 @media (max-width: 768px) {
-  .fight-container {
-    flex-direction: column;
-    padding: 0 1rem;
+  /* Arrange the two fighter containers side by side */
+  .fight-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
   }
-
-  /* Stack the name and photo vertically and adjust width */
+  
+  /* Each fighter container takes about half the width */
+  .mainContent {
+    width: 45%;
+    margin: 1%;
+    text-align: center;
+  }
+  
+  /* Keep the content inside each fighter container centered */
   .namePhoto {
+    display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
-    margin: 0 auto;
   }
-
-  /* Make images scale responsively */
+  
+  /* Scale down images so they fit side by side */
   .namePhoto img {
     width: 100%;
-    max-width: 150px;
+    max-width: 120px;
     height: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
-
-  /* Adjust font sizes for headers and HP display */
-  .mainContent h1 {
-    width: auto;
-    font-size: 2.5rem;
-  }
-
-  .mainContent p {
-    font-size: 2.5rem;
-    width: auto;
-    margin: 0.5rem 0;
-  }
-
-  /* Scale down the VS heading */
+  
+  /* Hide the VS. heading to reduce height */
   h2 {
-    font-size: 2.5rem;
-    margin: 1rem 0;
+    display: none;
   }
-
-  /* Adjust buttons in the action area */
-  .actionButtons .btn {
-    width: 150px;
-    font-size: 1.2rem;
-    margin: 5px;
-  }
-
-  /* Reduce font size for the fighter selection section */
-  .player-select, 
-  .player-select .btn {
-    font-size: 1.2rem;
-  }
-
-  /* Adjust the battle log for mobile */
-  .battle-log h3 {
+  
+  /* Adjust fighter name and HP sizes */
+  .mainContent h1 {
     font-size: 2rem;
   }
-  .battle-log {
-    margin-top: 2rem;
+  
+  .mainContent p {
+    font-size: 2rem;
+  }
+  
+  /* Adjust button sizes */
+  .actionButtons .btn {
+    width: 120px;
+    font-size: 1rem;
+  }
+  
+  /* Scale down the battle log heading */
+  .battle-log h3 {
+    font-size: 1.5rem;
   }
 }
